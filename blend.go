@@ -51,10 +51,10 @@ func Parse(filePath string) (b *Blend, err error) {
 		if blk.Hdr.Code == block.CodeENDB {
 			break
 		}
-		_, ok := block.Addr[blk.Hdr.OldAddr]
+		/*_, ok := block.Addr[blk.Hdr.OldAddr]
 		if ok {
 			return nil, fmt.Errorf("blend.Parse: multiple occurances of struct address %#x", blk.Hdr.OldAddr)
-		}
+		}*/
 		block.Addr[blk.Hdr.OldAddr] = blk
 
 		b.Blocks = append(b.Blocks, blk)
